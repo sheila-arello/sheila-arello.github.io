@@ -7,17 +7,44 @@
     <title>Meu Portfólio</title>
     <style>
         body {
+            font-family: 'Montserrat', 'Verdana', 'Arial', sans-serif;
             background-color: #003049;
             color: #EAE2B7;
         }
+        p{
+            font-size: 16px;
+        }
         h1{
-            font-family: Open-sans, Montserrat, sans-serif;
             font-weight: 600;
             color: #FCBF49;
+            text-align: center;
+        }
+        h2 {
+            line-height: 42px;
+            font-weight: 600;
+            font-size: 28px;
+            text-align: center;
+
+        }
+        img {
+            width: 500px;
+            border-radius: 30%;
+            display: block;
+            margin-left: 20%;
         }
         .descricao{
             font-style: italic;
             font-size: 20px;
+        }
+        a {
+            color: whitesmoke;
+        }
+
+        #link-foto{
+            display: block;
+            background-color: #F77F00;
+            margin-left: 20px;
+            padding: 5%;
         }
     </style>
 
@@ -25,7 +52,7 @@
 <body>
     <h1>Sheila Raquel Arello</h1>
     <a name="foto"></a>
-    <img src="" alt="Foto Sheila" id="foto">
+    <img src="Foto Sheila - 2017.jpeg" alt="Foto Sheila" id="foto">
     <hr>
     <h2><a name="sobre"></a>Sobre</h2>
     <p class="descricao">Brasileira, nascida em São Paulo capital mas moro há 25 anos em Belo Horizonte.</p>
@@ -42,7 +69,7 @@
         <li><strong>Ajudar pessoas</strong></li>
     </ul>
     <hr>
-    <a href="#foto">Veja minha foto</a>
+    <a href="#foto" id="link-foto">Veja minha foto</a>
     <hr>
     <br>
     <h2><a name="interesses"></a>O que eu curto</h2>
@@ -57,12 +84,6 @@
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#interesses">Interesses</a></li>
     </ul>
-
-    Seu Portfólio Web deve ser estilizado usando as informações a seguir:
-Defina fontes diferentes para o seu nome e para a descrição que você criou;
-Defina uma cor base de background do seu Portfólio Web ;
-Altere o estilo das tags que você usou para destacar algumas informações, como sua nacionalidade e a cidade/estado onde mora;
-Coloque tamanhos diferentes para os elementos da lista de habilidades que você criou. Lembre-se de usar classes para cada um dos elementos;
 
 </body>
 </html>

@@ -1,0 +1,146 @@
+body {
+  background-color: rgb(253, 251, 251);
+  font-family: Montserrat, Verdana, Arial, sans-serif;
+  margin: 0;
+}
+
+#cabecalho {
+  position: fixed;
+  background-color: rgb(37, 58, 104);
+  color: white;
+  width: 100%;
+  height: 110px;
+  text-align: center;
+  z-index: 1;
+}
+
+header ul li {
+  display: inline-block;
+  padding: 3px 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: white;
+}
+
+h2 {
+  font-style: italic;
+  text-align: center;
+  font-size: 1.17em;
+}
+
+.sessao_foto {
+  top: 3px;
+  left: 3px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+#minha_foto {
+  position: relative;
+  width: 22%;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: rgb(253, 251, 251);
+  display: inline-block;
+}
+
+.meu_texto {
+  position: relative;
+  width: 68%;
+  font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: center;
+  display: inline-block;
+  color: rgb(210, 210, 210);
+}
+
+main {
+  position: relative;
+  top: 320px;
+  height: auto;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+#principal {
+  width: 100%;
+  display: inline-block;
+}
+
+#texto-lateral {
+  width: 24%;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: rgb(248, 243, 239);
+  vertical-align: top;
+  text-align: center;
+}
+
+#texto-lateral h3 {
+  border-bottom: 1px solid rgb(210, 210, 210);
+}
+
+.learning {
+  display: inline-block;
+  background-color: rgb(244, 244, 244);
+  width: 45%;
+  padding: 3px;
+  margin: 8px;
+}
+
+#licoes_aprendidas li , #licoes_a_aprender li {
+  line-height: 23px;
+}
+
+table , th , td {
+  border: 1px solid black;
+  background-color: rgb(244, 244, 244);
+  border-collapse: collapse;
+}
+
+table {
+  width: 70%;
+  margin: 0 auto;
+}
+
+th , td {
+  width: 50%;
+}
+
+#rodape {
+  position: relative;
+  top: 500px;
+  margin-left: 0;
+  height: auto;
+  background-color: rgb(244, 244, 244);
+  border-top: 1px solid rgb(210, 210, 210);
+  padding: 10px;
+  font-size: 0.8em;
+}
+
+/* Inspirado no projeto de @Raphael Martins */
+.listas-background {
+  background-color: white;
+  width: 45%;
+  height: 246px;
+  display: inline-block;
+  padding: 10px;
+  list-style-position: inside;
+  margin: 10px;
+  vertical-align: top;
+}
+
+.sombra {
+  filter: drop-shadow(0 0 10px rgb(141, 141, 141));
+}

@@ -1,0 +1,211 @@
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #eee;
+}
+
+.sombra {
+  filter: drop-shadow(0 0 10px rgb(141, 141, 141));
+}
+
+button {
+  margin: 10px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+h3 {
+  color: #eee;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  letter-spacing: 3px;
+}
+
+.input-container {
+  width: 100%;  
+  display: inline-block;
+  text-align: left;
+  border: 2px solid #4F4F4F;
+  padding: 10px 5px;
+}
+
+.buttons-container {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 10px 5px;
+  border: 2px solid #4F4F4F;
+  border-top-color: #eee;
+}
+
+.input-container input {
+  margin-top: 8px;
+  margin-right: 20px;
+}
+
+.input-pontos1 .input-pontos2 {
+  margin: 0;
+}
+
+label {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  vertical-align: middle;
+}
+
+.dados-container {
+  background: green;
+  padding: 40px 25px 20px 25px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.dados-container ul li {
+  color:white;
+  font-size: 20px;
+  letter-spacing: 3px;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+.players-container {
+  /* margin-left: 10px; */
+}
+
+li {
+  color: #666;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 30%;
+  height: 50px;
+  border-left: 1px solid gray;
+}
+
+
+.players div .box {
+  width: auto;
+  text-align: center;
+  /* border: 1px solid gray; */
+}
+
+.box {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 8px;
+  background-color: yellowgreen;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.rounds-container-color1 {
+  background-color: wheat;
+  height: 50px;
+}
+
+.rodada {
+  margin-top: 20px;
+}
+
+hr {
+  margin: 3px 0;
+}
+
+
+/* LIXO
+#btn-add {
+  margin: 0;
+}
+
+#days {
+  margin: 0;
+}
+
+#days li {
+  color: #777;
+  display: inline-block;
+  font-size:20px;
+  margin: 5px 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 13.6%;
+}
+
+.my-tasks {
+  clear: both;
+  float: left;
+  height: 100px;
+  vertical-align: middle;
+  width: 49%;
+}
+
+.my-tasks div {
+  border: 1px solid black;
+  border-radius: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: inline-block;
+  height: 30px;
+  margin-left: 10px;
+  vertical-align: middle;
+  width: 30px;
+}
+
+.my-tasks div:hover {
+  height: 45px;
+  width: 45px;
+}
+
+.my-tasks span {
+  color: #666;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+}
+
+.tasks-container {
+  height: 130px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.tasks-container h3 {
+  color: #666;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  letter-spacing: 3px;
+}
+
+.task-list {
+  margin-top: 20px;
+}
+
+.task-list-container {
+  display: inline-block;
+}
+
+.task-list-container ul {
+  list-style-type: none;
+  padding: 0;
+  color: #666;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  vertical-align: middle;
+} */

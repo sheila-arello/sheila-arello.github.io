@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="stl_buraco.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Buraco</title>
+  </head>
+  <body>
+    <header class="dados-container">
+      <h1>Pontuação Jogo de Buraco</h1>
+      <div class="input-container">
+        <h3>DUPLAS</h3>
+        <label for="dupla-input1">Dupla 1:</label>
+        <input type="text"
+          id="dupla-input1"
+          placeholder="Dupla 1"
+        >
+        <label for="dupla-input2">Dupla 2:</label>
+        <input type="text"
+          id="dupla-input2"
+          placeholder="Dupla 2"
+        >
+      </div>
+      <div class="buttons-container">
+      </div>
+    </header>
+    <div class="players-container">
+      <ul class="players">
+        <li></li>
+        <li>
+          <div id="dupla1" class="sombra">
+            <p>Dupla1</p>
+            <p id="totDupla1" class="box">0</p>
+          </div>
+        </li>
+        <li>
+          <div id="dupla2" class="sombra">
+            <p>Dupla2</p>
+            <p id="totDupla2" class="box">0</p>
+          </div>
+        </li>
+      </ul>
+    </div>   
+    <div class="rounds-container">
+        <hr>
+        <ul id="rounds1" class="rounds-container-color1">
+          <li><span class="rodada">Primeira Rodada</span></li>
+          <li>
+            <input type="text" class="input-pontos1" placeholder="Saida">
+            <input type="text" class="input-pontos1" placeholder="Cartas">
+          </li>
+          <li>
+            <input type="text" class="input-pontos2" placeholder="Saida">
+            <input type="text" class="input-pontos2" placeholder="Cartas">
+          </li>
+        </ul>
+        <hr>
+        <ul id="rounds2">
+          <li><span class="rodada">Segunda Rodada</span></li>
+          <li>
+            <input type="text" class="input-pontos1" placeholder="Saida">
+            <input type="text" class="input-pontos1" placeholder="Cartas">
+          </li>
+          <li>
+            <input type="text" class="input-pontos2" placeholder="Saida">
+            <input type="text" class="input-pontos2" placeholder="Cartas">
+          </li>
+        </ul>
+        <hr>
+        <ul id="rounds3" class="rounds-container-color1">
+          <li><span class="rodada">Terceira Rodada</span></li>
+          <li>
+            <input type="text" class="input-pontos1" placeholder="Saida">
+            <input type="text" class="input-pontos1" placeholder="Cartas">
+          </li>
+          <li>
+            <input type="text" class="input-pontos2" placeholder="Saida">
+            <input type="text" class="input-pontos2" placeholder="Cartas">
+          </li>
+        </ul>
+        <hr>
+        <ul id="rounds4">
+          <li><span class="rodada">Quarta Rodada</span></li>
+          <li>
+            <input type="text" class="input-pontos1" placeholder="Saida">
+            <input type="text" class="input-pontos1" placeholder="Cartas">
+          </li>
+          <li>
+            <input type="text" class="input-pontos2" placeholder="Saida">
+            <input type="text" class="input-pontos2" placeholder="Cartas">
+          </li>
+        </ul>
+        <hr>
+    </div>
+    <div class="parabens"></div>
+
+    <!-- <section class="tasks-container">
+      <div class="my-tasks">
+        <h3>MINHAS TAREFAS</h3>
+      </div>
+      <div class="task-list-container">
+        <ul class="task-list">
+        </ul>
+      </div>
+    </section> -->
+    <script src="scr_buraco.js"></script>
+  </body>
+</html>

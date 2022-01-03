@@ -1,6 +1,7 @@
 
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -53,8 +54,8 @@ h3 {
   margin-right: 20px;
 }
 
-.input-pontos1 .input-pontos2 {
-  margin: 0;
+.input-pontos1 , .input-pontos2 {
+  width: 60%;
 }
 
 label {
@@ -78,10 +79,6 @@ label {
   letter-spacing: 3px;
   list-style-type: none;
   text-transform: uppercase;
-}
-
-.players-container {
-  /* margin-left: 10px; */
 }
 
 li {
@@ -122,90 +119,3 @@ li {
 hr {
   margin: 3px 0;
 }
-
-
-/* LIXO
-#btn-add {
-  margin: 0;
-}
-
-#days {
-  margin: 0;
-}
-
-#days li {
-  color: #777;
-  display: inline-block;
-  font-size:20px;
-  margin: 5px 0;
-  text-align: center;
-  vertical-align: middle;
-  width: 13.6%;
-}
-
-.my-tasks {
-  clear: both;
-  float: left;
-  height: 100px;
-  vertical-align: middle;
-  width: 49%;
-}
-
-.my-tasks div {
-  border: 1px solid black;
-  border-radius: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: inline-block;
-  height: 30px;
-  margin-left: 10px;
-  vertical-align: middle;
-  width: 30px;
-}
-
-.my-tasks div:hover {
-  height: 45px;
-  width: 45px;
-}
-
-.my-tasks span {
-  color: #666;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  padding-bottom: 10px;
-  vertical-align: middle;
-}
-
-.tasks-container {
-  height: 130px;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-}
-
-.tasks-container h3 {
-  color: #666;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  text-decoration: underline;
-  letter-spacing: 3px;
-}
-
-.task-list {
-  margin-top: 20px;
-}
-
-.task-list-container {
-  display: inline-block;
-}
-
-.task-list-container ul {
-  list-style-type: none;
-  padding: 0;
-  color: #666;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  vertical-align: middle;
-} */

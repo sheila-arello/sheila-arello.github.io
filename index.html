@@ -1,47 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='pt-BR'>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='stylesheet' href='style.css'>
+  <title>Aqui na Trybe</title>
 </head>
 <body>
-    <h1>Sheila Raquel Arello</h1>
-    <a name="foto"></a>
-    <img src="" alt="Foto Sheila" id="foto">
-    <hr>
-    <h2><a name="sobre"></a>Sobre</h2>
-    <p>Brasileira, nascida em São Paulo capital mas moro há 25 anos em Belo Horizonte.</p>
-    <p>Sobre minhas paixões, acho que a primeira é ser <em>"mãe"</em>, a maior escola da vida! <br>
-        Amo jogar vôlei, assistir séries, viajar, 
-        um breve refúgio na praia e principalmente viver intensamente o aqui e agora.</p>
-    <hr>
-    <h2><a name="habilidades"></a>Minhas Habilidades</h2>
-    <ul>
-        <li>Comunicação (em constante desenvolvimento)</li>
-        <li>Diagnóstico/ solução de problemas</li>
-        <li>Organização</li>
-        <li>Trabalho em Equipe</li>
-        <li><strong>Ajudar pessoas</strong></li>
-    </ul>
-    <hr>
-    <a href="#foto">Veja minha foto</a>
-    <hr>
-    <br>
-    <h2><a name="interesses"></a>O que eu curto</h2>
-    <p>Dou risada demais com esses caras!</p>
-    <a href="https://www.portadosfundos.com.br" target="_blank">Pra relaxar!</a>
-    <br>
-    <br>
-    <br>
-    <h2><em>Índice</em></h2>
-    <ul>
+  <!--(2) A barra deve possuir o ID 'cabecalho' e deve ser fixa no topo da página com a propriedade top tendo
+  0. O título deve estar dentro da barra e ser um elemento h1 com ID 'titulo'. --> 
+  <header id='cabecalho'>
+    <h1 id='titulo'>Meu Aprendizado na Trybe</h1>
+    <nav>
+      <ul>
         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#interesses">Interesses</a></li>
-    </ul>
-
+        <li><a href='#skills'>Skills</a></li>
+        <li><a href='#aprendizado'>Aprendizado</a></li>
+        <li><a href='#sites'>Meus Sites</a></li>
+      </ul>
+    </nav>
+  </header>       
+  <!-- A foto deve ser inserida utilizando uma tag img com o ID 'minha_foto'.     -->  
+  <section class='sessao_foto'>
+    <img src='Foto Sheila - 2017.jpeg' alt='Foto Sheila' id='minha_foto'>
+    <div class='meu_texto'>
+      <h1>Sheila Raquel Arello</h1>
+      <h2>Engenheira de Automação - Estudante de desenvolvimento WEB na Trybe</h2>
+      <!-- <p>"Basta-me um pequeno gesto,<br>
+      feito de longe e de leve,<br>
+      para que venhas comigo <br>
+      e eu para sempre te leve..."<br>Cecília Meireles</p> -->
+    </div>
+  </section>
+  <!-- Conteúdo Principal - MAIN ------>
+  <main>
+    <div id='principal'>
+      <section id="sobre">
+        <hr>
+        <h2>Sobre<a name="sobre"></a></h2>
+        <p class="descricao">Brasileira, nascida em São Paulo capital mas moro há 25 anos em Belo Horizonte.</p>
+        <p class="descricao">Sobre minhas paixões, acho que a primeira é ser <em>"mãe"</em>, a maior escola da vida! <br>
+            Amo jogar vôlei, assistir séries, viajar, 
+            um breve refúgio na praia e principalmente viver intensamente o aqui e agora.</p>
+      </section>           
+      <hr>
+      <section id="skills">
+        <h2>Skills<a name="skills"></a></h2>
+        <ul>
+            <li>Comunicação (em constante desenvolvimento)</li>
+            <li>Diagnóstico/ solução de problemas</li>
+            <li>Organização</li>
+            <li>Trabalho em Equipe</li>
+            <li><strong>Ajudar pessoas</strong></li>
+        </ul>
+      </section> 
+      <hr>    
+      <section id="educacao">
+        <h2>Educação<a name="educacao"></a></h2>
+        <ul>
+          <li>TRYBE - Desenvolvimento WEB Full Stack - Atualmente cursando</li>
+          <li>UNICESUMAR - Sistemas para Internet - De 2019 a 2021</li>
+          <li>Institute National de Telecomunication - INT France - 1990</li>
+          <li>FAAP - Engenharia Eletrônica - De 1984 a 1988</li>
+          <li>Colégio Dante Alighiery - De 1972 a 1983</li>
+      </ul>
+      </section> 
+      <hr>    
+      <section id="empresas">
+        <h2>Empresas<a name="empresas"></a></h2>
+        <ul>
+          <li>Deckpit - 2020</li>
+          <li>Accenture - 2019 - Temporário</li>
+          <li>Accenture - De 2009 a 2014</li>
+          <li>Atan Engenharia - De 2005 a 2009</li>
+          <li>BS7 Automação - De 1996 a 2005</li>
+          <li>KHS Indústria de Máquinas - De 1992 a 1996</li>
+          <li>NUM - De 1990 a 1991</li>
+          <li>Numericon - De 1987 a 1989</li>
+      </ul>
+      </section> 
+      <hr>
+      <section>
+        <!-- lista de lições aprendidas: A lista deve possuir 10 itens, 
+        ser numerada e possuir o ID 'licoes_aprendidas'.-->    
+          <h2>Aprendizado na Trybe<a name="aprendizado"></a></h2>
+          <ol id='licoes_aprendidas'>
+            <li>Unix e Bash</li>
+            <li>Git e GitHub</li>
+            <li>Internet - Conceitos</li>
+            <li>HTML & CSS</li>
+            <li>HTML Semântico</li>
+            <li>JavaScript</li>
+            <li>Comunicação Assertiva</li>
+            <li>Autoliderança</li>
+            <li>Várias dinâmicas de Soft Skills</li>
+          </ol>
+          <p>Lista em constante atualização</p>
+      </section>
+      <hr>
+      <!-- (8) Crie um artigo sobre seu aprendizado: O artigo deverá possuir 
+      mais de 300 caracteres e menos de 600, além disto deve possuir a tag article.-->      
+      <article class='listas-background sombra'>
+        <h2>Meu Aprendizado</h2>
+        <p>Primeiramente digo que essa foi a melhor decisão da minha vida! Estudar na Trybe depois de tantos anos de trabalho e carreira consagrada foi algo inusitado, mas cada dia que passo aqui certifico minha decisão. Eu já sabia muita coisa, a final de contas sou Enga. Eletrônica e sempre estive muito próxima a atividades de desenvolvimento. Porém, o dia a dia de um desenvolvedor é outra coisa e essa trilha é fundamental para que eu me estabeleça como profissional da área. Cada dia que passa esse curso supera minhas expectativas e sigo ansiosa pelo que virá!</p>
+      </article>
+      <article class='listas-background sombra'>
+        <h2>Depoimento</h2>
+        <p>“Aqui na Trybe encontramos pessoas que já estão lá na frente, mas super animadas para colaborar. Outras que estão começando do zero, mas com muita garra e coragem para aprender. Esse é meu grande aprendizado, perceber que estou finalmente inserida numa comunidade que faz muito sentido pra mim!"</p>
+      </article>
+      <hr>
+      <!-- (7) Insira pelo menos um link externo na página): abrir em uma nova aba do navegador-->      
+      <h3>Para saber mais acesse minha página no GitHub <a href='https://sheila-arello.github.io/' target='_blank'>clicando aqui</a></h3>
+      <hr>
+    </div>
+  </main>  
+  <!--(6) Adicione um rodapé: O rodapé deve utilizar a tag footer e possuir o ID 'rodape'. --> 
+  <footer id='rodape'>
+    <p>Este site foi desenvolvido por <em>Sheila Arello</em></p>
+  </footer>
 </body>
 </html>

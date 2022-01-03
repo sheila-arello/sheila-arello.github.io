@@ -19,6 +19,7 @@ document.getElementById('rounds2').style.display = 'none';
 document.getElementById('rounds3').style.display = 'none';
 document.getElementById('rounds4').style.display = 'none';
 document.querySelector('.players-container').style.display = 'none';
+document.querySelector('.parabens').style.display = 'none';
 
 function updateHeaderGame() {
   document.querySelector('#dupla1 p').innerText = document.getElementById('dupla-input1').value;
@@ -122,7 +123,11 @@ function testaValor(numRodada){
 }
 
 function parabens(strVencedor){
-  alert('A dupla vencedora é ' + strVencedor);
+  // alert('A dupla vencedora é ' + strVencedor);
+  document.getElementById('vencedor').innerText = strVencedor;
+  const parabens = document.querySelector('.parabens');
+  parabens.style.display = 'block';
+  document.getElementById('audio').play();
 }
 
 function vencedor(soma1, soma2) {

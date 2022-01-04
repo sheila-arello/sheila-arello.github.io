@@ -187,12 +187,15 @@ function zeraTudo(){
   document.getElementById('rounds3').style.display = 'none';
   document.getElementById('rounds4').style.display = 'none';
   document.querySelector('.players-container').style.display = 'none';
+  document.querySelector('.parabens').style.display = 'none';
 }
 
 const btnReinicio = document.getElementById('btn-reinicio');
 btnReinicio.addEventListener('click', function(){
-    alert('Tem certeza que deseja reiniciar a partida?');
-    zeraTudo();
+    let resposta = confirm('Tem certeza que deseja reiniciar a partida?');
+    if (resposta){
+      zeraTudo();
+    }
 })
 
 // Recupera do local Storage

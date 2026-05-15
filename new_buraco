@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marcador de Buraco</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      margin:0;
+      background:#f3f4f6;
+      color:#222;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:20px;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:12px;
+      padding:20px;
+      margin-bottom:20px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:6px;
+      font-weight:bold;
+    }
+
+    input{
+      width:100%;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      margin-bottom:12px;
+    }
+
+    button{
+      padding:12px 18px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.2s;
+    }
+
+    .btn-primary{
+      background:#2563eb;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#1d4ed8;
+    }
+
+    .btn-success{
+      background:#16a34a;
+      color:white;
+    }
+
+    .btn-success:hover{
+      background:#15803d;
+    }
+
+    .btn-danger{
+      background:#dc2626;
+      color:white;
+    }
+
+    .btn-danger:hover{
+      background:#b91c1c;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:15px;
+    }
+
+    table th,
+    table td{
+      border:1px solid #ddd;
+      padding:10px;
+      text-align:center;
+    }
+
+    table th{
+      background:#f1f5f9;
+    }
+
+    .score{
+      font-size:24px;
+      font-weight:bold;
+      margin-top:10px;
+      text-align:center;
+    }
+
+    .winner{
+      background:#dcfce7;
+      color:#166534;
+      padding:15px;
+      border-radius:10px;
+      margin-top:20px;
+      font-size:20px;
+      text-align:center;
+      font-weight:bold;
+    }
+
+    .hidden{
+      display:none;
+    }
+
+    @media(max-width:768px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>🃏 Marcador de Buraco</h1>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label>Nome da Dupla 1</label>
+        <input type="text" id="dupla1" placeholder="Ex: Ana e João">
+      </div>
+
+      <div>
+        <label>Nome da Dupla 2</label>
+        <input type="text" id="dupla2" placeholder="Ex: Carlos e Maria">
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="iniciarPartida()">
+      Iniciar Nova Partida
+    </button>
+  </div>
+
+  <div class="card hidden" id="partidaArea">
+
+    <h2>Rodadas</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Rodada</th>
+          <th id="nomeD1">Dupla 1</th>
+          <th id="nomeD2">Dupla 2</th>
+        </tr>
+      </thead>
+
+      <tbody id="tabelaRodadas"></tbody>
+    </table>
+
+    <br>
+
+    <button class="btn-success" onclick="somarRodada()">
+      Somar Rodada
+    </button>
+
+    <button class="btn-danger" onclick="novaPartida()">
+      Reiniciar Partida
+    </button>
+
+    <div class="grid">
+      <div class="score" id="placar1">0 pontos</div>
+      <div class="score" id="placar2">0 pontos</div>
+    </div>
+
+    <div id="vencedor" class="winner hidden"></div>
+
+  </div>
+
+  <div class="card">
+    <h2>📜 Histórico</h2>
+
+    <button class="btn-primary" onclick="carregarHistorico()">
+      Atualizar Histórico
+    </button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Dupla 1</th>
+          <th>Pts</th>
+          <th>Dupla 2</th>
+          <th>Pts</th>
+          <th>Vencedor</th>
+        </tr>
+      </thead>
+
+      <tbody id="historicoBody"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+
+  let rodadaAtual = 1;
+  let total1 = 0;
+  let total2 = 0;
+  let partidaEncerrada = false;
+
+  function iniciarPartida(){
+
+    const dupla1 = document.getElementById("dupla1").value.trim();
+    const dupla2 = document.getElementById("dupla2").value.trim();
+
+    if(!dupla1 || !dupla2){
+      alert("Informe o nome das duas duplas.");
+      return;
+    }
+
+    rodadaAtual = 1;
+    total1 = 0;
+    total2 = 0;
+    partidaEncerrada = false;
+
+    document.getElementById("partidaArea").classList.remove("hidden");
+    document.getElementById("nomeD1").innerText = dupla1;
+    document.getElementById("nomeD2").innerText = dupla2;
+
+    document.getElementById("placar1").innerText = `${dupla1}: 0 pontos`;
+    document.getElementById("placar2").innerText = `${dupla2}: 0 pontos`;
+
+    document.getElementById("vencedor").classList.add("hidden");
+
+    criarTabelaRodadas();
+  }
+
+  function criarTabelaRodadas(){
+
+    const tbody = document.getElementById("tabelaRodadas");
+    tbody.innerHTML = "";
+
+    for(let i=1; i<=6; i++){
+
+      tbody.innerHTML += `
+        <tr>
+          <td>${i}</td>
+
+          <td>
+            Saiu:
+            <input type="number" id="saiu1_${i}" value="0">
+
+            Cartas:
+            <input type="number" id="cartas1_${i}" value="0">
+          </td>
+
+          <td>
+            Saiu:
+            <input type="number" id="saiu2_${i}" value="0">
+
+            Cartas:
+            <input type="number" id="cartas2_${i}" value="0">
+          </td>
+        </tr>
+      `;
+    }
+  }
+
+  function somarRodada(){
+
+    if(partidaEncerrada){
+      return;
+    }
+
+    if(rodadaAtual > 6){
+      alert("Limite de 6 rodadas atingido.");
+      return;
+    }
+
+    const s1 = parseInt(document.getElementById(`saiu1_${rodadaAtual}`).value) || 0;
+    const c1 = parseInt(document.getElementById(`cartas1_${rodadaAtual}`).value) || 0;
+
+    const s2 = parseInt(document.getElementById(`saiu2_${rodadaAtual}`).value) || 0;
+    const c2 = parseInt(document.getElementById(`cartas2_${rodadaAtual}`).value) || 0;
+
+    total1 += s1 + c1;
+    total2 += s2 + c2;
+
+    atualizarPlacar();
+
+    if(total1 >= 3000 || total2 >= 3000){
+
+      partidaEncerrada = true;
+
+      let vencedor = "";
+
+      if(total1 > total2){
+        vencedor = document.getElementById("dupla1").value;
+      }else if(total2 > total1){
+        vencedor = document.getElementById("dupla2").value;
+      }else{
+        vencedor = "Empate";
+      }
+
+      finalizarPartida(vencedor);
+      return;
+    }
+
+    rodadaAtual++;
+  }
+
+  function atualizarPlacar(){
+
+    const dupla1 = document.getElementById("dupla1").value;
+    const dupla2 = document.getElementById("dupla2").value;
+
+    document.getElementById("placar1").innerText =
+      `${dupla1}: ${total1} pontos`;
+
+    document.getElementById("placar2").innerText =
+      `${dupla2}: ${total2} pontos`;
+  }
+
+  function finalizarPartida(vencedor){
+
+    const div = document.getElementById("vencedor");
+
+    div.classList.remove("hidden");
+
+    div.innerHTML = `
+      🏆 Vencedores: <strong>${vencedor}</strong>
+      <br><br>
+      Placar Final:
+      <br>
+      ${total1} x ${total2}
+    `;
+
+    salvarHistorico(vencedor);
+  }
+
+  function salvarHistorico(vencedor){
+
+    const historico =
+      JSON.parse(localStorage.getItem("historicoBuraco")) || [];
+
+    historico.push({
+      data: new Date().toLocaleString("pt-BR"),
+      dupla1: document.getElementById("dupla1").value,
+      dupla2: document.getElementById("dupla2").value,
+      pontos1: total1,
+      pontos2: total2,
+      vencedor: vencedor
+    });
+
+    localStorage.setItem(
+      "historicoBuraco",
+      JSON.stringify(historico)
+    );
+
+    carregarHistorico();
+  }
+
+  function carregarHistorico(){
+
+    const historico =
+      JSON.parse(localStorage.getItem("historicoBuraco")) || [];
+
+    const tbody = document.getElementById("historicoBody");
+
+    tbody.innerHTML = "";
+
+    historico.reverse().forEach(item => {
+
+      tbody.innerHTML += `
+        <tr>
+          <td>${item.data}</td>
+          <td>${item.dupla1}</td>
+          <td>${item.pontos1}</td>
+          <td>${item.dupla2}</td>
+          <td>${item.pontos2}</td>
+          <td>${item.vencedor}</td>
+        </tr>
+      `;
+    });
+  }
+
+  function novaPartida(){
+
+    if(confirm("Deseja realmente reiniciar a partida?")){
+
+      rodadaAtual = 1;
+      total1 = 0;
+      total2 = 0;
+      partidaEncerrada = false;
+
+      criarTabelaRodadas();
+      atualizarPlacar();
+
+      document.getElementById("vencedor")
+        .classList.add("hidden");
+    }
+  }
+
+  carregarHistorico();
+
+</script>
+
+</body>
+</html>
